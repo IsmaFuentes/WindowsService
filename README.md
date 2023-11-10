@@ -39,8 +39,7 @@ A background timer will be registered when the Service is executed for the first
     }
 ```
 
-- The operation will take as much time as it needs to finish, then we can notify the timer to start again after "X" seconds
-
+- The operation will take as much time as it needs to finish, after that the timer will be notified to restart in "X" seconds
 
 ```csharp
     private void OnTimer(object state)
@@ -67,7 +66,7 @@ A background timer will be registered when the Service is executed for the first
 
 ### Installation
 
-There Service comes with a ProjectInstaller, which will be executed when installing the service using NET Framework's **installutil** utility.
+The Service has a ProjectInstaller, which will be executed when using NET Framework **installutil** utility.
 
 - Manual installation/uninstallation
 
@@ -81,4 +80,4 @@ cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319\
 /k installutil /u "path to service executable"
 ```
 
-- The project comes with two .bat files that perform the installation and uninstallation processes. The **%serviceName%** parameter should be renamed to match the real executable's name.
+- The project comes with two .bat files that perform the installation and uninstallation processes. The **%serviceName%** parameter should be renamed to match the real executable name.
